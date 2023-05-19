@@ -10,7 +10,7 @@ bob_ready = False
 public_data_from_Alice_received = False
 
 
-@app.route("/health", methods=["GET"])
+@app.route("/health_random", methods=["GET"])
 def health():
     i = 0
     while not bob_ready:
