@@ -121,11 +121,11 @@ def BobBit():
     print("check BobBit")
     private_data = request.get_json()
     if private_data is None:
-        return jsonify({"error": "No data provided"}), 400
+        return jsonify({"error": "No data provided"}), 403
     if "bB" not in private_data:
-        return jsonify({"error": "No bit provided"}), 400
+        return jsonify({"error": "No bit provided"}), 401
     if int(private_data["bB"]) not in [0, 1]:
-        return jsonify({"error": "Invalid bit provided"}), 400
+        return jsonify({"error": "Invalid bit provided"}), 402
     bob_instance = Bob(int(private_data["bB"]))
     print("Bob is ready bB" + str(bob_instance.bit))
     bob_ready = True
