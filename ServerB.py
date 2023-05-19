@@ -108,6 +108,7 @@ def BobBit():
     global data
     bob_ready = False
     public_data_from_Alice_received = False
+    print("check BobBit")
     private_data = request.get_json()
     if private_data is None:
         return jsonify({"error": "No data provided"}), 400
@@ -116,6 +117,7 @@ def BobBit():
     if int(private_data["bB"]) not in [0, 1]:
         return jsonify({"error": "Invalid bit provided"}), 400
     bob_instance = Bob(int(private_data["bB"]))
+    print("Bob is ready bB" + str(bob_instance.bit))
     bob_ready = True
     # wait for Alice to health check localhost:5001/health
     # send health check to Alice without the private data
