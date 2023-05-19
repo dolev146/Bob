@@ -24,6 +24,8 @@ def health():
 
 @app.route("/dolev", methods=["POST"])
 def dolev():
+    print("dolev")
+    return jsonify({"status": "ok"}), 200
     # get { test : 1 } from dolev
     dolev = request.get_json()
     print(dolev)
