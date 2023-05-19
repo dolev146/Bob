@@ -120,7 +120,7 @@ def BobBit():
     # wait for Alice to health check localhost:5001/health
     # send health check to Alice without the private data
     print("Bob is ready")
-    alice_health = requests.get("http://localhost:5000/health")
+    alice_health = requests.get("https://alice-e7gz.onrender.com/")
     print(alice_health.status_code)
     if alice_health.status_code != 200:
         return jsonify({"error": "Alice is not ready"}), 400
